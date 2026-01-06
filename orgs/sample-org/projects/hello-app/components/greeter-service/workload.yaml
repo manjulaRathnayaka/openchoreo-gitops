@@ -10,7 +10,7 @@ spec:
     componentName: greeter-service
 
   containers:
-    app:
+    main:
       image: "ghcr.io/openchoreo/samples/greeter-service:latest"
       args:
         - ./go-greeter
