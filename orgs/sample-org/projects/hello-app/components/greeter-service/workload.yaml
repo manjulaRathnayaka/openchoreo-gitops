@@ -1,0 +1,21 @@
+# Greeter Service Workload
+apiVersion: openchoreo.dev/v1alpha1
+kind: Workload
+metadata:
+  name: greeter-service-workload
+  namespace: sample-org
+spec:
+  owner:
+    projectName: hello-app
+    componentName: greeter-service
+
+  containers:
+    app:
+      image: "ghcr.io/openchoreo/samples/greeter-service:latest"
+      args:
+        - ./go-greeter
+        - --port
+        - "9090"
+      env:
+        - key: LOG_LEVEL
+          value: "info"

@@ -1,0 +1,15 @@
+# Hello App Project
+# Projects are bounded contexts that group related components
+apiVersion: openchoreo.dev/v1alpha1
+kind: Project
+metadata:
+  name: hello-app
+  namespace: acme
+  annotations:
+    openchoreo.dev/display-name: Hello Application
+    openchoreo.dev/description: Sample project demonstrating GitOps with OpenChoreo
+  labels:
+    openchoreo.dev/organization: acme
+    openchoreo.dev/name: hello-app
+spec:
+  deploymentPipelineRef: default

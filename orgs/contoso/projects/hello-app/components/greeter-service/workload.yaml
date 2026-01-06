@@ -1,21 +1,21 @@
-# API Workload
-# Workloads define the runtime contract - what the component needs to run
+# Greeter Service Workload
 apiVersion: openchoreo.dev/v1alpha1
 kind: Workload
 metadata:
-  name: api-workload
-  namespace: sample-org
+  name: greeter-service-workload
+  namespace: contoso
 spec:
   owner:
     projectName: hello-app
-    componentName: api
+    componentName: greeter-service
 
   containers:
     app:
       image: "ghcr.io/openchoreo/samples/greeter-service:latest"
       args:
+        - ./go-greeter
         - --port
-        - "8080"
+        - "9090"
       env:
         - key: LOG_LEVEL
           value: "info"

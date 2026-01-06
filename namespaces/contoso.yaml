@@ -1,0 +1,7 @@
+# Kubernetes Namespace for contoso organization
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: contoso
+  labels:
+    openchoreo.dev/organization: contoso

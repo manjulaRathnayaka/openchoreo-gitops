@@ -1,0 +1,16 @@
+# Flux Kustomization - All Organizations
+# Syncs organization resources (platform, projects) - depends on namespaces
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: openchoreo-orgs
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: ./orgs
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: openchoreo-gitops
+  dependsOn:
+    - name: openchoreo-namespaces

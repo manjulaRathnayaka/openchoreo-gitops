@@ -1,0 +1,12 @@
+# OpenChoreo Organization - cluster-scoped resource
+# Organizations are the top-level grouping for projects and components
+apiVersion: openchoreo.dev/v1alpha1
+kind: Organization
+metadata:
+  name: acme
+  annotations:
+    openchoreo.dev/display-name: Acme Corporation
+    openchoreo.dev/description: Acme organization for multi-tenant GitOps demonstration
+  labels:
+    openchoreo.dev/name: acme
+spec: {}

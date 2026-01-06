@@ -1,0 +1,16 @@
+# Production Environment
+apiVersion: openchoreo.dev/v1alpha1
+kind: Environment
+metadata:
+  name: production
+  namespace: acme
+  annotations:
+    openchoreo.dev/display-name: Production
+    openchoreo.dev/description: Production environment for live traffic
+  labels:
+    openchoreo.dev/name: production
+spec:
+  dataPlaneRef: default
+  gateway:
+    dnsPrefix: prod
+  isProduction: true

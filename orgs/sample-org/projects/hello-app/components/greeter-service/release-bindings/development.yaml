@@ -1,0 +1,11 @@
+# ReleaseBinding for greeter-service to Development environment
+apiVersion: openchoreo.dev/v1alpha1
+kind: ReleaseBinding
+metadata:
+  name: greeter-service-development
+  namespace: sample-org
+spec:
+  environment: development
+  owner:
+    componentName: greeter-service
+    projectName: hello-app

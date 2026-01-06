@@ -1,0 +1,7 @@
+# Kubernetes Namespace for acme organization
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: acme
+  labels:
+    openchoreo.dev/organization: acme

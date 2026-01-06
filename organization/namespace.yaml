@@ -1,8 +1,0 @@
-# Kubernetes Namespace for the organization
-# This namespace will contain all projects and components for this organization
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: sample-org
-  labels:
-    openchoreo.dev/organization: sample-org

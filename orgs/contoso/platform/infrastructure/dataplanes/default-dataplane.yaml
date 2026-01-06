@@ -1,0 +1,36 @@
+# DataPlane for contoso
+# Manages via GitOps - credentials referenced from secrets (not inline)
+apiVersion: openchoreo.dev/v1alpha1
+kind: DataPlane
+metadata:
+  name: default
+  namespace: contoso
+  annotations:
+    openchoreo.dev/description: Default DataPlane for contoso organization
+    openchoreo.dev/display-name: Contoso DataPlane
+  labels:
+    openchoreo.dev/name: default
+    openchoreo.dev/organization: contoso
+spec:
+  # Cluster agent configuration for secure communication
+  clusterAgent:
+    clientCA:
+      secretRef:
+        name: cluster-gateway-ca
+        key: ca.crt
+
+  # Gateway configuration for routing traffic
+  gateway:
+    organizationVirtualHost: contoso.internal
+    publicVirtualHost: contoso.localhost
+
+  # Use existing cluster-agent's planeID to share the dataplane agent
+  # In production, each organization would have its own cluster-agent
+  planeID: default-dataplane
+
+  # Reference to the secret store (Vault) for external secrets
+  secretStoreRef:
+    name: vault-cluster-store
+
+  # Reference to observability plane for metrics/logs
+  observabilityPlaneRef: default

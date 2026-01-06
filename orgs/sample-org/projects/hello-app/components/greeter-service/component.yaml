@@ -1,9 +1,8 @@
-# API Component
-# Components are deployable units of software
+# Greeter Service Component
 apiVersion: openchoreo.dev/v1alpha1
 kind: Component
 metadata:
-  name: api
+  name: greeter-service
   namespace: sample-org
 spec:
   owner:
@@ -14,4 +13,13 @@ spec:
 
   parameters:
     replicas: 1
-    port: 8080
+    port: 9090
+
+  envOverrides:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
