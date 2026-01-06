@@ -9,7 +9,7 @@ spec:
     projectName: hello-app
 
   autoDeploy: true
-  componentType: deployment/http-service
+  componentType: deployment/service
 
   parameters:
     replicas: 1
