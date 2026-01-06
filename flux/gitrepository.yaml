@@ -1,0 +1,15 @@
+# Flux GitRepository
+# This tells Flux where to pull configurations from
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: openchoreo-gitops
+  namespace: flux-system
+spec:
+  interval: 1m                        # How often to check for changes
+  url: https://github.com/manjulaRathnayaka/openchoreo-gitops  # Replace with your repo URL
+  ref:
+    branch: main
+  # For private repositories, uncomment and configure:
+  # secretRef:
+  #   name: git-credentials

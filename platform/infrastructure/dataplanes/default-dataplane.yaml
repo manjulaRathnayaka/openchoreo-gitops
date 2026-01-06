@@ -1,0 +1,12 @@
+# Default DataPlane
+# DataPlanes represent the infrastructure where components run
+apiVersion: openchoreo.dev/v1alpha1
+kind: DataPlane
+metadata:
+  name: default
+  namespace: sample-org
+  labels:
+    openchoreo.dev/name: default
+spec:
+  # The default dataplane uses the same cluster
+  # For multi-cluster setups, you would configure remote cluster access here

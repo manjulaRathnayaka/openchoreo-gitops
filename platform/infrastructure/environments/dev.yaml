@@ -1,0 +1,17 @@
+# Development Environment
+# Environments define deployment targets with specific configurations
+apiVersion: openchoreo.dev/v1alpha1
+kind: Environment
+metadata:
+  name: development
+  namespace: sample-org
+  annotations:
+    openchoreo.dev/display-name: Development
+    openchoreo.dev/description: Development environment for testing
+  labels:
+    openchoreo.dev/name: development
+spec:
+  dataPlaneRef: default
+  gateway:
+    dnsPrefix: dev
+  isProduction: false

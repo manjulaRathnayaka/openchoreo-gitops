@@ -1,0 +1,12 @@
+# OpenChoreo Organization - cluster-scoped resource
+# Organizations are the top-level grouping for projects and components
+apiVersion: openchoreo.dev/v1alpha1
+kind: Organization
+metadata:
+  name: sample-org
+  annotations:
+    openchoreo.dev/display-name: Sample Organization
+    openchoreo.dev/description: Sample organization for learning GitOps with FluxCD
+  labels:
+    openchoreo.dev/name: sample-org
+spec: {}

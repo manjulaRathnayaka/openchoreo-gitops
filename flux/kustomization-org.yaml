@@ -1,0 +1,18 @@
+# Flux Kustomization - Organization Layer
+# This is applied FIRST to create the organization and namespace
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: openchoreo-organization
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./organization              # Sync the organization/ folder
+  prune: true                       # Delete resources removed from Git
+  sourceRef:
+    kind: GitRepository
+    name: openchoreo-gitops
+  healthChecks:
+    - apiVersion: v1
+      kind: Namespace
+      name: sample-org

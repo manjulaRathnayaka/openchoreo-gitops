@@ -1,0 +1,17 @@
+# API Component
+# Components are deployable units of software
+apiVersion: openchoreo.dev/v1alpha1
+kind: Component
+metadata:
+  name: api
+  namespace: sample-org
+spec:
+  owner:
+    projectName: hello-app
+
+  autoDeploy: true
+  componentType: deployment/http-service
+
+  parameters:
+    replicas: 1
+    port: 8080
