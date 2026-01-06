@@ -14,12 +14,3 @@ spec:
   parameters:
     replicas: 1
     port: 9090
-
-  envOverrides:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 256Mi
-      limits:
-        cpu: 500m
-        memory: 512Mi
