@@ -12,4 +12,4 @@ metadata:
     openchoreo.dev/organization: sample-org
     openchoreo.dev/name: hello-app
 spec:
-  deploymentPipelineRef: default-deployment-pipeline
+  deploymentPipelineRef: default

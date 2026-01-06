@@ -1,0 +1,12 @@
+# ReleaseBinding for API component to Development environment
+# This binds the component to an environment and triggers deployment
+apiVersion: openchoreo.dev/v1alpha1
+kind: ReleaseBinding
+metadata:
+  name: api-development
+  namespace: sample-org
+spec:
+  environment: development
+  owner:
+    componentName: api
+    projectName: hello-app
