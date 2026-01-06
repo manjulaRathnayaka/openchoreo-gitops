@@ -24,8 +24,9 @@ spec:
     organizationVirtualHost: sample-org.internal
     publicVirtualHost: sample-org.localhost
 
-  # Unique identifier for this dataplane
-  planeID: sample-org-dataplane
+  # Use existing cluster-agent's planeID to share the dataplane agent
+  # In production, each organization would have its own cluster-agent
+  planeID: default-dataplane
 
   # Reference to the secret store (Vault) for external secrets
   secretStoreRef:
